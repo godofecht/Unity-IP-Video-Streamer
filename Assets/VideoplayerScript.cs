@@ -72,7 +72,6 @@ public class VideoPlayerController : MonoBehaviour
         vPlayer.Play();
     }
 
-    // Add error handling to handle cases where the video stream URL is not valid
     private void Update()
     {
         if (!string.IsNullOrEmpty(videoSource) && !videoSource.StartsWith("http") && !videoSource.StartsWith("rtsp") && !System.IO.File.Exists(videoSource))
@@ -81,7 +80,6 @@ public class VideoPlayerController : MonoBehaviour
         }
     }
 
-    // Add support for various video formats
     public void SetVideoFormat(string format)
     {
         switch (format)
@@ -110,7 +108,6 @@ public class VideoPlayerController : MonoBehaviour
         videoPlayer.Prepare();
     }
 
-    // Add a UI for the script to make it more user-friendly
     public void SetVideoSourceType(VideoSourceType type)
     {
         videoSourceType = type;
@@ -127,7 +124,6 @@ public class VideoPlayerController : MonoBehaviour
         videoPlayer.playbackSpeed = speed;
     }
 
-    // Add methods to control video playback
     public void Play()
     {
         videoPlayer.Play();
@@ -153,46 +149,14 @@ public class VideoPlayerController : MonoBehaviour
         videoPlayer.SetDirectAudioVolume(0, volume);
     }
 
-    // Add a UI for the script to make it more user-friendly
     public void SetRenderer(Renderer renderer)
     {
         videoRenderer = renderer;
         InitializeVideoPlayer();
     }
 
-    // Add additional error handling to handle cases where the video player fails to prepare or play the video
     private void OnErrorReceived(VideoPlayer vPlayer, string message)
     {
         Debug.LogError("Video player error: " + message);
     }
 }
-
-
-
-
-
-
-/*
-
-
-The VideoPlayerController package provides a simple and easy-to-use solution for adding video playback functionality to your Unity projects. With this package, you can easily create and control video players in your scenes, allowing you to stream videos from an IP, stream videos from a URL, or play videos from a file.
-
-The VideoPlayerController script is fully customizable and comes with a range of options for controlling video playback. You can choose whether to loop the video playback, adjust the playback speed, set the video format, and enable or disable audio playback. You can also control video playback using a range of methods, including Play, Pause, Stop, SetTime, SetVolume, and more.
-
-The VideoPlayerController package is designed to be easy to use and highly customizable, making it suitable for a wide range of Unity projects. Whether you are creating a video player for a game, a virtual reality experience, or a training application, this package provides everything you need to add video playback functionality to your project.
-
-Use cases:
-
-Games: Add video cutscenes or trailers to your game using the VideoPlayerController script.
-
-Training applications: Create interactive training videos that allow users to pause, rewind, or fast-forward the video using the VideoPlayerController script.
-
-Virtual reality experiences: Use the VideoPlayerController script to add immersive video content to your virtual reality experiences.
-
-Marketing and advertising: Create video ads or product demos using the VideoPlayerController script.
-
-This description highlights the key features and use cases of your VideoPlayerController package, and should help to attract potential users on the Unity Asset Store. Make sure to provide clear and concise information about your package, and highlight its unique selling points to make it stand out from the competition.
-
-
-*/
-
